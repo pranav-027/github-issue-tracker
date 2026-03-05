@@ -51,17 +51,20 @@ function App() {
     <div className='min-h-screen bg-gray-100'>
       <div className='container mx-auto px-4 py-8'>
         <div className='flex justify-between items-center mb-8'>
-          <h1 className='text-4xl font-bold text-gray-800'>
+          <div className='flex-1'></div>
+          <h1 className='text-4xl font-bold text-gray-800 flex-1 text-center'>
             Github Issue Tracker
           </h1>
-          {issues.length > 0 && (
-            <button
-              onClick={clearAllIssues}
-              className='px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors text-sm'
-            >
-              Clear All Issues
-            </button>
-          )}
+          <div className='flex-1 flex justify-end'>
+            {issues.length > 0 && (
+              <button
+                onClick={clearAllIssues}
+                className='px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors text-sm'
+              >
+                Clear All Issues
+              </button>
+            )}
+          </div>
         </div>
         <IssueInput onAddIssue={addIssue} />
         <Board issues={issues} onMoveIssue={moveIssue} />
